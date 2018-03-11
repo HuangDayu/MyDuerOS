@@ -22,6 +22,7 @@ if sys.getdefaultencoding() != 'utf-8':
     sys.setdefaultencoding('utf-8')
 
 import re
+import json
 
 from sdk.dueros_core import DuerOS
 from app.framework.player import Player
