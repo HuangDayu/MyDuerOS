@@ -1,0 +1,1 @@
+import app.wakeup_trigger_main as wakeup_trigger_main
