@@ -182,7 +182,7 @@ class WakeupEngine(object):
 
 text="--"
 
-def setText(text1):
+def setText(self,text1):
     self.text=text1
 
 def getText():
