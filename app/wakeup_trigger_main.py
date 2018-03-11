@@ -197,9 +197,9 @@ def directive_listener(directive_content):
     #content = str(u'DuerOS云端下发directive:%s' % (directive_content))
     ret=str(directive_content)
 
-    text=ret
-    print(text)
-    text1=re.sub('\'','\"',text)
+    text1=ret
+    print(text1)
+    text1=re.sub('\'','\"',text1)
     print(text1)
     textDict = json.loads(text1)
     text1=textDict['payload']['text']
