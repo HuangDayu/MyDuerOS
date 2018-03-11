@@ -197,7 +197,7 @@ def directive_listener(directive_content):
     #content = str(u'DuerOS云端下发directive:%s' % (directive_content))
     ret=str(directive_content)
 
-    text1=ret
+    text1=str(ret)
     print(text1)
     text1=re.sub('\'','\"',text1)
     print(text1)
