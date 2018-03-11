@@ -21,6 +21,8 @@ if sys.getdefaultencoding() != 'utf-8':
     reload(sys)
     sys.setdefaultencoding('utf-8')
 
+import re
+
 from sdk.dueros_core import DuerOS
 from app.framework.player import Player
 from app.framework.mic import Audio
