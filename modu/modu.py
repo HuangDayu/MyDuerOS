@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sdk import wakeup_trigger_main
+from sdk.wakeup_trigger_main import wakeup_trigger_main
 
 while True:
     if wakeup_trigger_main.getText() != "":
