@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import sys
-sys.path.append('app/')
 import wakeup_trigger_main
 
 while True:
