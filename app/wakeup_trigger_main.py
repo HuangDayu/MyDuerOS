@@ -196,7 +196,8 @@ def directive_listener(directive_content):
     '''
     #content = str(u'DuerOS云端下发directive:%s' % (directive_content))
     ret=str(directive_content)
-    setText(ret)
+
+    setText(self,ret)
 
     text1=wakeup_trigger_main.getText()
     text1=re.sub('\'','\"',text1)
