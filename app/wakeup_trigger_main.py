@@ -196,8 +196,7 @@ def directive_listener(directive_content):
 
     text=ret
 
-    text1=wakeup_trigger_main.getText()
-    text1=re.sub('\'','\"',text1)
+    text1=re.sub('\'','\"',getText())
     textDict = json.loads(text1) #产生dict
     text1=textDict['payload']['text']
     print(text1)
