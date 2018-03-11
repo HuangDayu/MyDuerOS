@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-import app.wakeup_trigger_main as wakeup_trigger_main
+
+import sys
+sys.path.append('app/')
+import wakeup_trigger_main
 
 while True:
     if wakeup_trigger_main.getText() != "":
