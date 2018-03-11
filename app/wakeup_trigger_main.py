@@ -42,6 +42,7 @@ def getConfigValue(groupName,name):
 
 sensitivityVolue = getConfigValue("snowboy","sensitivityVolue")
 
+
 class SnowBoy(object):
     '''
     基于SnowBoy的唤醒类
@@ -179,6 +180,14 @@ class WakeupEngine(object):
                 sink.put(chunk)
 
 
+text="--"
+
+def setText(text1):
+    self.text=text1
+
+def getText():
+    return text
+
 def directive_listener(directive_content):
     '''
     云端下发directive监听器
@@ -187,6 +196,14 @@ def directive_listener(directive_content):
     '''
     #content = str(u'DuerOS云端下发directive:%s' % (directive_content))
     ret=str(directive_content)
+    setText(ret)
+
+    text1=wakeup_trigger_main.getText()
+    text1=re.sub('\'','\"',text1)
+    textDict = json.loads(text1) #产生dict
+    text1=textDict['payload']['text']
+    print(text1)
+
     content = 'DuerOS云端下发的消息:%s' % (ret)
     logging.info(content)
 
