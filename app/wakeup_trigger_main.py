@@ -24,7 +24,7 @@ if sys.getdefaultencoding() != 'utf-8':
 import re
 import json
 
-from sdk import dueros_core,DuerOS
+from sdk.dueros_core import DuerOS
 from app.framework.player import Player
 from app.framework.mic import Audio
 from app.snowboy import snowboydecoder
