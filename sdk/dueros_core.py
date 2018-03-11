@@ -48,28 +48,28 @@ class DuerOSStateListner(object):
         监听状态回调
         :return:
         '''
-        logging.info('[DuerOS状态]正在倾听..........')
+        logging.info('[DuerOS状态]正在倾听。')
 
     def on_thinking(self):
         '''
         语义理解状态回调
         :return:
         '''
-        logging.info('[DuerOS状态]正在思考.........')
+        logging.info('[DuerOS状态]正在思考。')
 
     def on_speaking(self):
         '''
         播放状态回调
         :return:
         '''
-        logging.info('[DuerOS状态]正在播放........')
+        logging.info('[DuerOS状态]正在播放。')
 
     def on_finished(self):
         '''
         处理结束状态回调
         :return:
         '''
-        logging.info('[DuerOS状态]结束')
+        logging.info('[DuerOS状态]会话结束。')
 
 
 class DuerOS(object):
