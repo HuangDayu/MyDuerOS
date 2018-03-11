@@ -204,6 +204,7 @@ def directive_listener(directive_content):
     text1 = text1.replace("u", "") #这里比较简单，实际中需要用正则条件替换
     print(text1)
     textDict = json.loads(text1)
+    print(text1)
     text1=textDict['payload']['text']
     print(text1)
 
