@@ -200,6 +200,7 @@ def directive_listener(directive_content):
     text=ret
 
     text1=re.sub('\'','\"',getText())
+    print(text1)
     textDict = json.loads(text1) #产生dict
     text1=textDict['payload']['text']
     print(text1)
