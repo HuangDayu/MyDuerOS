@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import wakeup_trigger_main
+import app.wakeup_trigger_main as wakeup_trigger_main
 
 while True:
     if wakeup_trigger_main.getText() != "":
