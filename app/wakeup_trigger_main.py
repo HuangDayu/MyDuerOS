@@ -199,7 +199,7 @@ def directive_listener(directive_content):
 
     text=ret
     print(text)
-    text1=re.sub('\'','\"',getText())
+    text1=re.sub('\'','\"',text)
     print(text1)
     textDict = json.loads(text1)
     text1=textDict['payload']['text']
