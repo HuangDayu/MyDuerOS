@@ -33,7 +33,7 @@ from app.utils.prompt_tone import PromptTone
 logging.basicConfig(level=logging.INFO)
 
 ############## HuangDayu add ############
-from modu import  modu
+from modu import modus
 import configparser
 import os
 cf = configparser.ConfigParser()
@@ -214,7 +214,7 @@ def directive_listener(directive_content):
     #     text=""
 
     if 'FINAL' in ret:
-        modu.printRet(ret)
+        modus.printRet(ret)
     else :
         pass
 

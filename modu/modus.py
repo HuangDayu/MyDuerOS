@@ -1,10 +1,13 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+
+# -*- coding: utf-8 -*-
 
 from app import wakeup_trigger_main
 
-def printRet(ret):
-    print("-----------------------%s",ret)
+class Modu(object):
+
+    def printRet(ret):
+        print("-----------------------%s",ret)
 
 # while True:
 #     if "" != wakeup_trigger_main.getText():
