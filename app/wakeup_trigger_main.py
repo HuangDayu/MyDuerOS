@@ -215,7 +215,8 @@ def directive_listener(directive_content):
     #     text=""
 
     if 'FINAL' in ret:
-        modu.Modu.printRet(ret)
+        #modu.Modu.printRet(ret)
+        modu.printRet(ret)
     else :
         pass
 

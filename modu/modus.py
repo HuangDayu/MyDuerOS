@@ -6,6 +6,11 @@ class Modu:
     def printRet(ret):
         print("-----------------------%s",ret)
 
+
+
+def printRet(ret):
+    print("++++++++++++++++++++++++++++%s", ret)
+
 # while True:
 #     if "" != wakeup_trigger_main.getText():
 #         print(wakeup_trigger_main.getText())
