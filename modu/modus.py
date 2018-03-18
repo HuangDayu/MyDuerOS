@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
 
-
-from app import wakeup_trigger_main
-
-class Modu(object):
+class Modu:
 
     def printRet(ret):
         print("-----------------------%s",ret)
