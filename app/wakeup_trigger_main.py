@@ -32,12 +32,16 @@ from app.utils.prompt_tone import PromptTone
 
 logging.basicConfig(level=logging.INFO)
 
+############## HuangDayu add ############
+from modu import  modu
 import configparser
 import os
 cf = configparser.ConfigParser()
 path1=os.path.abspath('.') 
 path2=path1+"/config.ini"
 cf.read(path2)
+
+##################################
 
 def getConfigValue(groupName,name):
     value =  cf.get(groupName,name)
@@ -197,17 +201,22 @@ def directive_listener(directive_content):
     #content = str(u'DuerOS云端下发directive:%s' % (directive_content))
     ret=str(directive_content)
 
-    text1=str(ret)
-    if 'FINAL' in text1:
-        #text1=re.sub('\'','\"',text1)
-        text1 = text1.replace("'", '"')
-        text1 = text1.replace("u", "") #这里比较简单，实际中需要用正则条件替换
-        text1 = text1.replace("\\", "/")
-        textDict = json.loads(text1)
-        text1=textDict['payload']['text']
-        text=text1
+    # text1=str(ret)
+    # if 'FINAL' in text1:
+    #     #text1=re.sub('\'','\"',text1)
+    #     text1 = text1.replace("'", '"')
+    #     text1 = text1.replace("u", "") #这里比较简单，实际中需要用正则条件替换
+    #     text1 = text1.replace("\\", "/")
+    #     textDict = json.loads(text1)
+    #     text1=textDict['payload']['text']
+    #     text=text1
+    # else :
+    #     text=""
+
+    if 'FINAL' in ret:
+        modu.printRet(ret)
     else :
-        text=""
+        pass
 
     content = 'DuerOS云端下发的消息:%s' % (ret)
     logging.info(content)
