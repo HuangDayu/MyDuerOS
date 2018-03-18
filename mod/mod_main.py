@@ -25,3 +25,6 @@ def printRet(ret):
     # textDict = json.loads(text1)
     # text1 = textDict['payload']['text']
     # text = text1
+
+if __name__ == '__main__':
+    pass
