@@ -10,7 +10,6 @@
 #### vim /home/pi/DuerOS-Modular/config.ini
 #### CLIENT_ID = '你的CLIENT_ID'
 #### CLIENT_SECRET = '你的CLIENT_SECRET'
-### 赋予最高权限 chmod 777 wakeup_trigger_start.sh auth.sh enter_trigger_start.sh
 ### 授权：sh auth.sh 或者 ./auth.sh
 ### 语音唤醒：sh wakeup_trigger_start.sh 或者 ./wakeup_trigger_start.sh
 ### 回车唤醒：sh enter_trigger_start.sh 或者 ./enter_trigger_start.sh
