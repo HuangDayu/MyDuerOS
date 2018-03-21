@@ -33,9 +33,7 @@ from app.utils.prompt_tone import PromptTone
 logging.basicConfig(level=logging.INFO)
 
 ############## HuangDayu add ############
-from mod import mod_main
-#from mod import modus
-#from mod
+from mod import modular as mod
 import configparser
 import os
 cf = configparser.ConfigParser()
@@ -203,21 +201,8 @@ def directive_listener(directive_content):
     #content = str(u'DuerOS云端下发directive:%s' % (directive_content))
     ret=str(directive_content)
 
-    # text1=str(ret)
-    # if 'FINAL' in text1:
-    #     #text1=re.sub('\'','\"',text1)
-    #     text1 = text1.replace("'", '"')
-    #     text1 = text1.replace("u", "") #这里比较简单，实际中需要用正则条件替换
-    #     text1 = text1.replace("\\", "/")
-    #     textDict = json.loads(text1)
-    #     text1=textDict['payload']['text']
-    #     text=text1
-    # else :
-    #     text=""
-
     if 'FINAL' in ret:
-        #mod.Modu.printRet(ret)
-        mod_main.printRet(ret)
+        mod.Modular().getDuerOSRet(ret)
     else :
         pass
 
