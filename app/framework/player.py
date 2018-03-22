@@ -11,7 +11,7 @@ from gi.repository import Gst
 
 Gst.init(None)
 
-isPlay=False
+isPlay=True
 
 def setIsPlay(volue):
     isPlay=volue
@@ -30,12 +30,13 @@ class Player(object):
         # self.bus.connect('sync-message::eos', self.on_eos)
 
     def play(self, uri):
+        print("------------------------------------------"+isPlay)
         '''
         播放
         :param uri:播放资源地址
         :return:
         '''
-        if not isPlay:
+        if isPlay:
             print("-------------------play url----------------------")
             print(uri)
             print("-------------------play url----------------------")
