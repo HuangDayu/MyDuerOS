@@ -3,4 +3,5 @@
 
 class Modular:
     def getDuerOSRet(ret):
-        print(ret)
+        print("返回结果"+ret)
+        return ret

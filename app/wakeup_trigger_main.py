@@ -34,13 +34,13 @@ logging.basicConfig(level=logging.INFO)
 
 ############## HuangDayu add ############
 from mod import modular as mod
+modObj=mod.Modular()
 import configparser
 import os
 cf = configparser.ConfigParser()
 path1=os.path.abspath('.') 
 path2=path1+"/config.ini"
 cf.read(path2)
-
 ##################################
 
 def getConfigValue(groupName,name):
@@ -202,7 +202,7 @@ def directive_listener(directive_content):
     ret=str(directive_content)
 
     if 'FINAL' in ret:
-        mod.Modular().getDuerOSRet(ret)
+        modObj.getDuerOSRet(ret)
     else :
         pass
 
