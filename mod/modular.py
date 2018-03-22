@@ -12,9 +12,6 @@ from app.framework import player
 playObj = player.Player()
 
 from cnf import config as cnfg
-
-CLIENT_SECRET =
-
 APP_ID = cnfg.getConfigValue("user","app_id")
 API_KEY = cnfg.getConfigValue("user","client_id")
 SECRET_KEY = cnfg.getConfigValue("user","client_secret")
