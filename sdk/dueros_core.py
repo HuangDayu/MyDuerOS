@@ -446,7 +446,7 @@ class DuerOS(object):
             name = self.__name_convert(name)
             if hasattr(self, namespace):
                 interface = getattr(self, namespace)
-                directive_func = getattr(str(interface), str(name), None)
+                directive_func = getattr(str(interface), name, None)
                 if directive_func:
                     directive_func(directive)
                 else:
