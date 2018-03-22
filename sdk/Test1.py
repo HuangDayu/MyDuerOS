@@ -18,6 +18,7 @@ def myPrint():
         modObj3.Modu.printRetStatic("import class static ")
         md.Modu.printRetStatic("md.Modu.printRetStatic")
         md.Modu().printRet("md.Modu().printRet")
+        
 
 
 myPrint()
