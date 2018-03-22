@@ -18,13 +18,10 @@ class Player(object):
     播放器实现类
     '''
 
-    isPlay=True
+    isPlay=True #python的静态成员变量只能通过 类.变量名 的形式获取
 
     def setIsPlay(self,volue):
-        print('---------volue--------'+str(volue))
         Player.isPlay=volue
-        print('---------------self.isPlay---------'+str(self.isPlay))
-        print('---------------isPlay---------' + str(Player.isPlay))
 
     def __init__(self):
         self.player = Gst.ElementFactory.make("playbin", "player")
@@ -35,22 +32,17 @@ class Player(object):
         # self.bus.connect('sync-message::eos', self.on_eos)
 
     def play(self, uri):
-        print("------------------------------------------"+str(self.isPlay))
         '''
         播放
         :param uri:播放资源地址
         :return:
         '''
         if Player.isPlay:
-            print("-------------------play url----------------------")
-            print(uri)
-            print("-------------------play url----------------------")
             self.player.set_state(Gst.State.NULL)
             self.player.set_property('uri', uri)
             self.player.set_state(Gst.State.PLAYING)
         else:
             Player.isPlay =True
-            print('--------------pass----------------')
 
     def stop(self):
         '''
