@@ -17,7 +17,7 @@ setup(
         'requests',
     ],
     scripts = [
-        'bin/aip_client',
+        'aip/bin/aip_client',
     ] if 'Windows' not in platform.system() else [],
     license = 'Apache License',
     author = 'Baidu',
