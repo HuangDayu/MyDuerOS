@@ -30,7 +30,7 @@ class Player(object):
         # self.bus.connect('sync-message::eos', self.on_eos)
 
     def play(self, uri):
-        print("------------------------------------------"+isPlay)
+        print("------------------------------------------"+str(isPlay))
         '''
         播放
         :param uri:播放资源地址
