@@ -22,7 +22,7 @@ class Player(object):
 
     def setIsPlay(self,volue):
         print('---------volue--------'+str(volue))
-        self.isPlay=volue
+        Player.isPlay=volue
         print('---------------self.isPlay---------'+str(self.isPlay))
         print('---------------isPlay---------' + str(Player.isPlay))
 
