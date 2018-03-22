@@ -31,6 +31,9 @@ class Player(object):
         :param uri:播放资源地址
         :return:
         '''
+        print("play url--------------------------------")
+        print(uri)
+        print("-----------------------------------------")
         self.player.set_state(Gst.State.NULL)
         self.player.set_property('uri', uri)
         self.player.set_state(Gst.State.PLAYING)
