@@ -41,7 +41,7 @@ cf = configparser.ConfigParser()
 path1=os.path.abspath('.') 
 path2=path1+"/config.ini"
 cf.read(path2)
-##################################
+#########################################
 
 def getConfigValue(groupName,name):
     value =  cf.get(groupName,name)
