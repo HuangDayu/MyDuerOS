@@ -35,19 +35,11 @@ logging.basicConfig(level=logging.INFO)
 ############## HuangDayu add ############
 from mod import modular as mod
 modObj=mod.Modular()
-import configparser
-import os
-cf = configparser.ConfigParser()
-path1=os.path.abspath('.') 
-path2=path1+"/config.ini"
-cf.read(path2)
+import cnf.config as cnfg
 #########################################
 
-def getConfigValue(groupName,name):
-    value =  cf.get(groupName,name)
-    return value
 
-sensitivityVolue = getConfigValue("snowboy","sensitivityVolue")
+sensitivityVolue = cnfg.getConfigValue("snowboy","sensitivityVolue")
 
 
 class SnowBoy(object):
@@ -187,10 +179,6 @@ class WakeupEngine(object):
                 sink.put(chunk)
 
 
-text=""
-
-def getText():
-    return text
 
 def directive_listener(directive_content):
     '''
@@ -222,8 +210,8 @@ def main():
     dueros.set_directive_listener(directive_listener)
 
     
-    model = getConfigValue("snowboy","snowboyPmdl")
-    snowboyName = getConfigValue("snowboy","snowboyName")
+    model = cnfg.getConfigValue("snowboy","snowboyPmdl")
+    snowboyName = cnfg.getConfigValue("snowboy","snowboyName")
     # SnowBoy唤醒引擎实体
     snowboy = SnowBoy(model)
 

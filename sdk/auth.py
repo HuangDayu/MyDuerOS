@@ -12,24 +12,10 @@ import datetime
 
 import sdk.configurate as configurate
 
-import configparser
-import os
-cf = configparser.ConfigParser()
-path2=os.path.abspath('.') 
-print(path2)
-path3=path2+"/config.ini"
-cf.read(path3)
+import cnf.config as cnfg
 
-def getConfigValue(groupName,name):
-    value =  cf.get(groupName,name)
-    return value
-
-# 开发者默认注册信息
-#CLIENT_ID = "5GFgMRfHOhIvI0B8AZB78nt676FeWA9n"
-#CLIENT_SECRET = "eq2eCNfbtOrGwdlA4vB1N1EaiwjBMu7i"
-
-CLIENT_ID = getConfigValue("user","client_id")
-CLIENT_SECRET = getConfigValue("user","client_secret")
+CLIENT_ID = cnfg.getConfigValue("user","client_id")
+CLIENT_SECRET = cnfg.getConfigValue("user","client_secret")
 
 # 百度token服务器url
 TOKEN_URL = 'https://openapi.baidu.com/oauth/2.0/token'

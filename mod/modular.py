@@ -2,12 +2,24 @@
 # -*- coding: utf-8 -*-
 import json
 import sys
+import os
+from aip.aip import AipSpeech as tts
 if sys.getdefaultencoding() != 'utf-8':
         reload(sys)
         sys.setdefaultencoding('utf-8')
 
 from app.framework import player
 playObj = player.Player()
+
+from cnf import config as cnfg
+
+CLIENT_SECRET =
+
+APP_ID = cnfg.getConfigValue("user","app_id")
+API_KEY = cnfg.getConfigValue("user","client_id")
+SECRET_KEY = cnfg.getConfigValue("user","client_secret")
+aipSpeech = tts(APP_ID, API_KEY, SECRET_KEY)
+
 #file:///tmp/205472.mp3
 class Modular:
     def getDuerOSRet(self,string):
@@ -22,3 +34,13 @@ class Modular:
             playObj.setIsPlay(False)
             print('设置为False')
         return ret
+
+    def tts(self,text):
+        result = tts.synthesis(text, 'zh', 1, {
+            'vol': 5,
+        })
+        # 识别正确返回语音二进制 错误则返回dict 参照下面错误码
+        if not isinstance(result, dict):
+            with open('hecheng.mp3', 'wb') as f:
+                f.write(result)
+
