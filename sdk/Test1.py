@@ -33,6 +33,8 @@ def testJson():
         ret = textDict['payload']['text']
         #ret = ret.decode('unicode-escape')
         print("返回结果::::::::::::::::::" + ret)
+        if ret == '明天天气怎么样':
+                print('true')
 
 myPrint()
 testJson()

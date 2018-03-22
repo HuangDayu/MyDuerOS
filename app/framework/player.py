@@ -11,6 +11,10 @@ from gi.repository import Gst
 
 Gst.init(None)
 
+isPlay=False
+
+def setIsPlay(volue):
+    isPlay=volue
 
 class Player(object):
     '''
@@ -31,12 +35,15 @@ class Player(object):
         :param uri:播放资源地址
         :return:
         '''
-        print("-------------------play url----------------------")
-        print(uri)
-        print("-------------------play url----------------------")
-        self.player.set_state(Gst.State.NULL)
-        self.player.set_property('uri', uri)
-        self.player.set_state(Gst.State.PLAYING)
+        if not isPlay:
+            print("-------------------play url----------------------")
+            print(uri)
+            print("-------------------play url----------------------")
+            self.player.set_state(Gst.State.NULL)
+            self.player.set_property('uri', uri)
+            self.player.set_state(Gst.State.PLAYING)
+        else:
+            pass
 
     def stop(self):
         '''
