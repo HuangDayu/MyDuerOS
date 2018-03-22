@@ -21,6 +21,7 @@ class Player(object):
     isPlay=True
 
     def setIsPlay(self,volue):
+        print('---------volue--------'+str(volue))
         self.isPlay=volue
 
     def __init__(self):
