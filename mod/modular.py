@@ -30,6 +30,7 @@ class Modular:
             #playObj.stop() 无效
             playObj.setIsPlay(False)
             print('设置为False')
+            tts("好的")
         return ret
 
     def tts(self,text):
