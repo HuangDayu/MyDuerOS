@@ -43,6 +43,7 @@ class Player(object):
             self.player.set_property('uri', uri)
             self.player.set_state(Gst.State.PLAYING)
         else:
+            print('--------------pass----------------')
             pass
 
     def stop(self):

@@ -16,7 +16,8 @@ class Modular:
         textDict = json.loads(string)
         ret = textDict['payload']['text']
         # ret = ret.decode('unicode-escape')
-        print("返回结果::::::::::::::::::" + ret)
+        print("返回结果:" + ret)
         if ret == '打开台灯':
             player.setIsPlay(True)
+            print('设置为True')
         return ret
