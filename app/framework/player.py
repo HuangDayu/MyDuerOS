@@ -11,15 +11,17 @@ from gi.repository import Gst
 
 Gst.init(None)
 
-isPlay=True
 
-def setIsPlay(volue):
-    isPlay=volue
 
 class Player(object):
     '''
     播放器实现类
     '''
+
+    isPlay=True
+
+    def setIsPlay(self,volue):
+        self.isPlay=volue
 
     def __init__(self):
         self.player = Gst.ElementFactory.make("playbin", "player")
@@ -30,13 +32,13 @@ class Player(object):
         # self.bus.connect('sync-message::eos', self.on_eos)
 
     def play(self, uri):
-        print("------------------------------------------"+str(isPlay))
+        print("------------------------------------------"+str(self.isPlay))
         '''
         播放
         :param uri:播放资源地址
         :return:
         '''
-        if isPlay:
+        if self.isPlay:
             print("-------------------play url----------------------")
             print(uri)
             print("-------------------play url----------------------")

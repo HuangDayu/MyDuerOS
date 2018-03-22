@@ -18,6 +18,6 @@ class Modular:
         # ret = ret.decode('unicode-escape')
         print("返回结果:" + ret)
         if ret == '打开台灯':
-            player.setIsPlay(False)
+            player.Player.setIsPlay(False)
             print('设置为False')
         return ret
