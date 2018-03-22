@@ -10,5 +10,5 @@ class Modular:
         ret = ret.replace("\\", "/")
         textDict = json.loads(ret)
         ret = textDict['payload']['text']
-        print("返回结果"+ret)
+        print("返回结果::::::::::::::::::"+ret)
         return ret
