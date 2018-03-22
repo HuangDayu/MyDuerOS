@@ -23,6 +23,8 @@ class Player(object):
     def setIsPlay(self,volue):
         print('---------volue--------'+str(volue))
         self.isPlay=volue
+        print('---------------self.isPlay---------'+str(self.isPlay))
+        print('---------------isPlay---------' + str(Player.isPlay))
 
     def __init__(self):
         self.player = Gst.ElementFactory.make("playbin", "player")
@@ -39,7 +41,7 @@ class Player(object):
         :param uri:播放资源地址
         :return:
         '''
-        if self.isPlay:
+        if Player.isPlay:
             print("-------------------play url----------------------")
             print(uri)
             print("-------------------play url----------------------")
