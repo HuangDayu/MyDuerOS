@@ -33,7 +33,7 @@ class Modular:
             tts("好的")
         return ret
 
-    def tts(self,text):
+    def tts(text):
         result = tts.synthesis(text, 'zh', 1, {
             'vol': 5,
         })
