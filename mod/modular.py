@@ -3,6 +3,8 @@
 import json
 import sys
 import os
+import time
+import pygame
 from aip.aip import AipSpeech
 if sys.getdefaultencoding() != 'utf-8':
         reload(sys)
@@ -42,7 +44,12 @@ class Modular:
                 f.write(result)
 
         fileUrl="file:///tmp/tts.mp3"
-        os.system('sudo mplayer /tmp/tts.mp3')
+        #os.system('sudo mplayer /tmp/tts.mp3')
         #playObj.play(fileUrl)
-
-
+        file=r'/tmp/tts.mp3'
+        pygame.mixer.init()
+        print("播放tts.mp3")
+        track = pygame.mixer.music.load(file)
+        pygame.mixer.music.play()
+        #time.sleep(10)
+        #pygame.mixer.music.stop()
