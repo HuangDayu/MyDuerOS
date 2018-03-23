@@ -29,12 +29,12 @@ class Modular:
         # ret = ret.decode('unicode-escape')
         print("返回结果:" + ret)
         if ret == '打开台灯':
-            playObj.setIsPlay(False)
             self.getTTS("好的")
         return ret
 
     #为授权使用
     def getTTS(self,text):
+        playObj.setIsPlay(False)
         result = aipSpeech.synthesis(text, 'zh', 1, {
             'vol': 5,
         })
@@ -44,12 +44,12 @@ class Modular:
                 f.write(result)
 
         fileUrl="file:///tmp/tts.mp3"
-        #os.system('sudo mplayer /tmp/tts.mp3')
+        os.system('sudo mplayer /tmp/tts.mp3')
         #playObj.play(fileUrl)
-        file=r'/tmp/tts.mp3'
-        pygame.mixer.init()
-        print("播放tts.mp3")
-        track = pygame.mixer.music.load(file)
-        pygame.mixer.music.play()
+        # file=r'/tmp/tts.mp3'
+        # pygame.mixer.init()
+        # print("播放tts.mp3")
+        # track = pygame.mixer.music.load(file)
+        # pygame.mixer.music.play()
         #time.sleep(10)
         #pygame.mixer.music.stop()
