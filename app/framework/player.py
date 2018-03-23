@@ -42,6 +42,7 @@ class Player(object):
             self.player.set_property('uri', uri)
             self.player.set_state(Gst.State.PLAYING)
         else:
+            uri=""
             Player.isPlay =True
 
     def stop(self):
