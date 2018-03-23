@@ -3,7 +3,7 @@
 import json
 import sys
 import os
-from aip.aip import AipSpeech as tts
+from aip.aip import AipSpeech
 if sys.getdefaultencoding() != 'utf-8':
         reload(sys)
         sys.setdefaultencoding('utf-8')
@@ -15,7 +15,7 @@ from cnf import config as cnfg
 APP_ID = cnfg.getConfigValue("user","app_id")
 API_KEY = cnfg.getConfigValue("user","client_id")
 SECRET_KEY = cnfg.getConfigValue("user","client_secret")
-aipSpeech = tts(APP_ID, API_KEY, SECRET_KEY)
+aipSpeech = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
 
 #file:///tmp/205472.mp3
 class Modular:
@@ -35,7 +35,7 @@ class Modular:
 
     #为授权使用
     def getTTS(self,text):
-        result = tts.synthesis(text, 'zh', 1, {
+        result = aipSpeech.synthesis(text, 'zh', 1, {
             'vol': 5,
         })
         # 识别正确返回语音二进制 错误则返回dict 参照下面错误码
