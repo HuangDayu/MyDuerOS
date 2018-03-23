@@ -27,19 +27,21 @@ class Modular:
         # ret = ret.decode('unicode-escape')
         print("返回结果:" + ret)
         if ret == '打开台灯':
-            #playObj.stop() 无效
-            playObj.setIsPlay(False)
-            print('设置为False')
             self.getTTS("好的")
         return ret
 
     #为授权使用
     def getTTS(self,text):
+        playObj.setIsPlay(False)
         result = aipSpeech.synthesis(text, 'zh', 1, {
             'vol': 5,
         })
         # 识别正确返回语音二进制 错误则返回dict 参照下面错误码
         if not isinstance(result, dict):
-            with open('hecheng.mp3', 'wb') as f:
+            with open('/tmp/tts.mp3', 'wb') as f:
                 f.write(result)
+                
+        fileUrl="file:///tmp/tts.mp3"+
+        playObj.play(fileUrl)
+
 
