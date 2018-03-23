@@ -21,7 +21,7 @@ class PromptTone(object):
         提示音播放
         :return:
         '''
-        i = random.randint(0, PromptTone.listLen)
+        i = random.randint(0, (PromptTone.listLen-1))
         url = '../resources/' + PromptTone.mp3List[i]
         resource = os.path.realpath(os.path.join(os.path.dirname(__file__), url))
         self.resource_uri = 'file://{}'.format(resource)
