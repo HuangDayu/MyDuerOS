@@ -42,6 +42,7 @@ class Modular:
                 f.write(result)
 
         fileUrl="file:///tmp/tts.mp3"
-        playObj.play(fileUrl)
+        os.system('sudo mplayer /tmp/tts.mp3')
+        #playObj.play(fileUrl)
 
 
