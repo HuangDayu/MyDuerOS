@@ -30,11 +30,11 @@ class Modular:
             #playObj.stop() 无效
             playObj.setIsPlay(False)
             print('设置为False')
-            tts("好的")
+            self.getTTS("好的")
         return ret
 
     #为授权使用
-    def tts(text):
+    def getTTS(text):
         result = tts.synthesis(text, 'zh', 1, {
             'vol': 5,
         })
