@@ -34,7 +34,7 @@ class Modular:
         return ret
 
     #为授权使用
-    def getTTS(text):
+    def getTTS(self,text):
         result = tts.synthesis(text, 'zh', 1, {
             'vol': 5,
         })
