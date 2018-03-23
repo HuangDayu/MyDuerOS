@@ -15,14 +15,14 @@ class PromptTone(object):
 
     def __init__(self, player):
         self.player = player
-        i=random.randint(0, PromptTone.listLen)
-        url='../resources/'+PromptTone.mp3List[i]
-        resource = os.path.realpath(os.path.join(os.path.dirname(__file__), url))
-        self.resource_uri = 'file://{}'.format(resource)
 
     def play(self):
         '''
         提示音播放
         :return:
         '''
+        i = random.randint(0, PromptTone.listLen)
+        url = '../resources/' + PromptTone.mp3List[i]
+        resource = os.path.realpath(os.path.join(os.path.dirname(__file__), url))
+        self.resource_uri = 'file://{}'.format(resource)
         self.player.play(self.resource_uri)
