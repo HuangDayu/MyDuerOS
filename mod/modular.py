@@ -40,8 +40,8 @@ class Modular:
         if not isinstance(result, dict):
             with open('/tmp/tts.mp3', 'wb') as f:
                 f.write(result)
-                
-        fileUrl="file:///tmp/tts.mp3"+
+
+        fileUrl="file:///tmp/tts.mp3"
         playObj.play(fileUrl)
 
 
