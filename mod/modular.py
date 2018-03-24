@@ -50,7 +50,7 @@ class Modular:
         if text == '打开台灯':
             self.getTTS("好的")
             return True
-        elif text == '树莓派' or '树莓派数据':
+        elif text == '树莓派' or '树莓派数据' or "树莓派状态":
             self.getTTS(raspberrypi.getRpiData())
             return 'listen'
         # 语音输出模块[speech_synthesizer]
