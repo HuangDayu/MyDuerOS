@@ -2,5 +2,5 @@ from mod.modular import Modular
 
 
 class Mqtt(Modular):
-    def publish(self):
+    def publishs(self):
         print("publish")

@@ -59,7 +59,7 @@ class Modular:
         #pygame.mixer.music.stop()
 
     def findChildren(self):
-        child_mothod=getattr(self,'publish')
+        child_mothod = getattr(self,"publishs")
         child_mothod()
 
     # class father():
