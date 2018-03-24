@@ -9,6 +9,5 @@ class children(father):
     def out(self):
         print "hehe"
 
-
 child = children()
 child.call_children()

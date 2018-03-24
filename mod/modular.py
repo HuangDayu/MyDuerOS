@@ -30,12 +30,7 @@ class Modular:
         textDict = json.loads(string)
         ret = textDict['payload']['text']
         # ret = ret.decode('unicode-escape')
-        print("返回结果:" + ret)
-        if ret == '打开台灯':
-            md=Modular()
-            md.findChildren()
-            #self.findChildren()
-            self.getTTS("好的")
+        self.strCompare(ret)
         return ret
 
     #为授权使用
@@ -48,61 +43,45 @@ class Modular:
         if not isinstance(result, dict):
             with open('/tmp/tts.mp3', 'wb') as f:
                 f.write(result)
-
         fileUrl="file:///tmp/tts.mp3"
         os.system('sudo mplayer /tmp/tts.mp3')
-        #playObj.play(fileUrl)
-        # file=r'/tmp/tts.mp3'
-        # pygame.mixer.init()
-        # print("播放tts.mp3")
-        # track = pygame.mixer.music.load(file)
-        # pygame.mixer.music.play()
-        #time.sleep(10)
-        #pygame.mixer.music.stop()
 
-    def findChildren(self):
-        child_mothod = getattr(self,"publishs")
-        child_mothod()
-
-    # class father():
-    #     def call_children(self):
-    #         child_method = getattr(self, 'out')  # 获取子类的out()方法
-    #         child_method()  # 执行子类的out()方法
-    #
-    # class children(father):
-    #     def out(self):
-    #         print "hehe"
-
-    all_subclasses = {'0': '0'}
-
-    def get_all_classes(model):
-        """
-        获取父类的所有子类
-        """
-
-        for subclass in model.__subclasses__():
-            # print(subclass._meta.abstract)
-            if (not (subclass.__name__) in Modular.all_subclasses.keys()) and (not subclass._meta.abstract):
-                Modular.all_subclasses[subclass.__name__] = subclass
-            Modular.get_all_classes(subclass)
-            print(Modular.all_subclasses.__str__())
-        return Modular.all_subclasses
-
-    def do_collection(model=None, date=None):
-        """
-        执行收集数据的方法
-        """
-        allclasses = Modular.get_all_classes(StatBaseModel)
-        if date:
-            date = datetime.date.today() + datetime.timedelta(days=-1)
-        if model:
-            fn_collect = getattr(allclasses[model], 'collect', None)
-            if callable(fn_collect):
-                fn_collect(date)
-            print("执行{0}的collect 方法".format(model))
-            return
-        for item, value in allclasses.items():
-            fn_collect = getattr(value, 'collect', None)
-            if callable(fn_collect):
-                fn_collect(date)
-                print("执行{0}的collect 方法".format(item))
+    def strCompare(self,text):
+        if text == '打开台灯':
+            self.getTTS("好的")
+            return True
+        elif text == 'Listen':
+            return 'listen'
+        # 语音输出模块[speech_synthesizer]
+        elif text == 'Speak':
+            return 'speak'
+        # 扬声器控制模块[speaker]
+        elif text == 'SetVolume':
+            return 'set_volume'
+        elif text == 'AdjustVolume':
+            return 'adjust_volume'
+        elif text == 'SetMute':
+            return 'set_mute'
+        # 音频播放器模块[audio_player]
+        elif text == 'Play':
+            return 'play'
+        elif text == 'Stop':
+            return 'stop'
+        elif text == 'ClearQueue':
+            return 'clear_queue'
+        # 播放控制[playback_controller]
+        # 闹钟模块[alerts]
+        elif text == 'SetAlert':
+            return 'set_alert'
+        elif text == 'DeleteAlert':
+            return 'delete_alert'
+        # 屏幕展示模块[screen_display]
+        elif text == 'HtmlView':
+            return 'html_view'
+        # 系统模块
+        elif text == 'ResetUserInactivity':
+            return 'reset_user_inactivity'
+        elif text == 'SetEndpoint':
+            return 'set_end_point'
+        elif text == 'ThrowException':
+            return 'throw_exception'
