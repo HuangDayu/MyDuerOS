@@ -4,7 +4,7 @@ import json
 import sys
 import os
 import time
-
+import raspberrypi
 import datetime
 import pygame
 from aip.aip import AipSpeech
@@ -50,7 +50,8 @@ class Modular:
         if text == '打开台灯':
             self.getTTS("好的")
             return True
-        elif text == 'Listen':
+        elif text == '树莓派' or '树莓派数据':
+            self.getTTS(raspberrypi.getRpiData())
             return 'listen'
         # 语音输出模块[speech_synthesizer]
         elif text == 'Speak':
