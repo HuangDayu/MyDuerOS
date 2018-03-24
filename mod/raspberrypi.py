@@ -91,8 +91,7 @@ DISK_used = DISK_stats[1] # print('DISK 使用 = '+str(DISK_used)+'B')
 DISK_perc = DISK_stats[3]# print('DISK 使用占百分比 = '+str(DISK_perc))
 
 def getRpiData():
-    data="树莓派IP地址是"+Rpi_IP()+"CPU温度"+getCPUtemperature()+"CPU使用率"+getCPUuse()+'RAM 总计= '+RAM_total+' MB'+'RAM 使用 = '+RAM_used+' MB'+'RAM 剩余 = '+RAM_free+' MB'+'DISK 总计 = '+DISK_total+'B'+'DISK 使用 = '+DISK_used+'B'+'DISK 使用占百分比 = '+DISK_perc
-    return data
+    return "树莓派IP地址是"+Rpi_IP+"CPU温度"+CPU_temp+"CPU使用率"+CPU_usage+'RAM 总计= '+RAM_total+' MB'+'RAM 使用 = '+RAM_used+' MB'+'RAM 剩余 = '+RAM_free+' MB'+'DISK 总计 = '+DISK_total+'B'+'DISK 使用 = '+DISK_used+'B'+'DISK 使用占百分比 = '+DISK_perc
 
 if __name__ == '__main__':
     pass
