@@ -32,7 +32,9 @@ class Modular:
         # ret = ret.decode('unicode-escape')
         print("返回结果:" + ret)
         if ret == '打开台灯':
-            self.findChildren()
+            md=Modular()
+            md.findChildren()
+            #self.findChildren()
             self.getTTS("好的")
         return ret
 
