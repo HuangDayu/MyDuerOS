@@ -94,6 +94,7 @@ def getRpiData():
     strData="树莓派IP地址是"+Rpi_IP()+"CPU温度"+getCPUtemperature()+"CPU使用率"+getCPUuse()\
             +'RAM 总计= '+str(RAM_total)+' MB'+'RAM 使用 = '+str(RAM_used)+' MB'+'RAM 剩余 = '+str(RAM_free)+' MB'\
             +'DISK 总计 = '+str(DISK_total)+'B'+'DISK 使用 = '+str(DISK_used)+'B'+'DISK 使用占百分比 = '+str(DISK_perc)
+    return strData
 
 if __name__ == '__main__':
     pass
