@@ -96,10 +96,10 @@ def getRpiData():
            +"CPU使用率"+bytes(CPU_usage)\
            +'内存总计'+bytes(RAM_total)+' MB'\
            +'已使用'+bytes(RAM_used)+' MB'\
-           +'剩余 = '+bytes(RAM_free)+' MB'\
-           +'磁盘总计 = '+bytes(DISK_total)+'MB'\
-           +'已使用 = '+bytes(DISK_used)+'MB'\
-           +'占百分比 = '+bytes(DISK_perc)
+           +'剩余'+bytes(RAM_free)+' MB'\
+           +'磁盘总计'+bytes(DISK_total)+'MB'\
+           +'已使用'+bytes(DISK_used)+'MB'\
+           +'占百分比'+bytes(DISK_perc)
 
 if __name__ == '__main__':
     pass
