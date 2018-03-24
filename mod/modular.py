@@ -4,6 +4,8 @@ import json
 import sys
 import os
 import time
+
+import datetime
 import pygame
 from aip.aip import AipSpeech
 if sys.getdefaultencoding() != 'utf-8':
@@ -29,6 +31,7 @@ class Modular:
         # ret = ret.decode('unicode-escape')
         print("返回结果:" + ret)
         if ret == '打开台灯':
+            Modular.get_all_classes(Modular)
             self.getTTS("好的")
         return ret
 
@@ -53,3 +56,37 @@ class Modular:
         # pygame.mixer.music.play()
         #time.sleep(10)
         #pygame.mixer.music.stop()
+
+    all_subclasses = {'0': '0'}
+
+    def get_all_classes(model):
+        """
+        获取父类的所有子类
+        """
+
+        for subclass in model.__subclasses__():
+            # print(subclass._meta.abstract)
+            if (not (subclass.__name__) in Modular.all_subclasses.keys()) and (not subclass._meta.abstract):
+                Modular.all_subclasses[subclass.__name__] = subclass
+            Modular.get_all_classes(subclass)
+            print(Modular.all_subclasses.__str__())
+        return Modular.all_subclasses
+
+    def do_collection(model=None, date=None):
+        """
+        执行收集数据的方法
+        """
+        allclasses = Modular.get_all_classes(StatBaseModel)
+        if date:
+            date = datetime.date.today() + datetime.timedelta(days=-1)
+        if model:
+            fn_collect = getattr(allclasses[model], 'collect', None)
+            if callable(fn_collect):
+                fn_collect(date)
+            print("执行{0}的collect 方法".format(model))
+            return
+        for item, value in allclasses.items():
+            fn_collect = getattr(value, 'collect', None)
+            if callable(fn_collect):
+                fn_collect(date)
+                print("执行{0}的collect 方法".format(item))
