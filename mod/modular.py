@@ -23,6 +23,7 @@ aipSpeech = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
 
 #file:///tmp/205472.mp3
 class Modular:
+
     def getDuerOSRet(self,string):
         string = string.replace("u'", "'")  # 这里比较简单，实际中需要用正则条件替换
         string = string.replace("'", '"')
@@ -31,7 +32,7 @@ class Modular:
         # ret = ret.decode('unicode-escape')
         print("返回结果:" + ret)
         if ret == '打开台灯':
-            Modular.get_all_classes(Modular)
+            self.findChildren()
             self.getTTS("好的")
         return ret
 
@@ -56,6 +57,19 @@ class Modular:
         # pygame.mixer.music.play()
         #time.sleep(10)
         #pygame.mixer.music.stop()
+
+    def findChildren(self):
+        child_mothod=getattr(self,'publish')
+        child_mothod()
+
+    # class father():
+    #     def call_children(self):
+    #         child_method = getattr(self, 'out')  # 获取子类的out()方法
+    #         child_method()  # 执行子类的out()方法
+    #
+    # class children(father):
+    #     def out(self):
+    #         print "hehe"
 
     all_subclasses = {'0': '0'}
 
