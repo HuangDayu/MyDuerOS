@@ -49,7 +49,8 @@ class Modular:
     def strCompare(self,text):
         if text == '打开台灯':
             self.getTTS("好的")
-        elif text == '树莓派' or '树莓派数据' or "树莓派状态":
+        elif '树莓派' in text:
+            #elif text == '树莓派' or '树莓派数据' or "树莓派状态":
             self.getTTS(raspberrypi.getRpiData())
         else:
             pass
