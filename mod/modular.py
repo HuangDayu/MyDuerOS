@@ -35,7 +35,6 @@ class Modular:
 
     #为授权使用
     def getTTS(self,text):
-        playObj.setIsPlay(False)
         result = aipSpeech.synthesis(text, 'zh', 1, {
             'vol': 5,
         })
@@ -44,14 +43,13 @@ class Modular:
             with open('/tmp/tts.mp3', 'wb') as f:
                 f.write(result)
         fileUrl="file:///tmp/tts.mp3"
+        playObj.setIsPlay(False)
         os.system('sudo mplayer /tmp/tts.mp3')
 
     def strCompare(self,text):
         if text == '打开台灯':
             self.getTTS("好的")
-            return True
         elif text == '树莓派' or '树莓派数据' or "树莓派状态":
             self.getTTS(raspberrypi.getRpiData())
-            return True
         else:
-            return False
+            pass
