@@ -52,37 +52,6 @@ class Modular:
             return True
         elif text == '树莓派' or '树莓派数据' or "树莓派状态":
             self.getTTS(raspberrypi.getRpiData())
-            return 'listen'
-        # 语音输出模块[speech_synthesizer]
-        elif text == 'Speak':
-            return 'speak'
-        # 扬声器控制模块[speaker]
-        elif text == 'SetVolume':
-            return 'set_volume'
-        elif text == 'AdjustVolume':
-            return 'adjust_volume'
-        elif text == 'SetMute':
-            return 'set_mute'
-        # 音频播放器模块[audio_player]
-        elif text == 'Play':
-            return 'play'
-        elif text == 'Stop':
-            return 'stop'
-        elif text == 'ClearQueue':
-            return 'clear_queue'
-        # 播放控制[playback_controller]
-        # 闹钟模块[alerts]
-        elif text == 'SetAlert':
-            return 'set_alert'
-        elif text == 'DeleteAlert':
-            return 'delete_alert'
-        # 屏幕展示模块[screen_display]
-        elif text == 'HtmlView':
-            return 'html_view'
-        # 系统模块
-        elif text == 'ResetUserInactivity':
-            return 'reset_user_inactivity'
-        elif text == 'SetEndpoint':
-            return 'set_end_point'
-        elif text == 'ThrowException':
-            return 'throw_exception'
+            return True
+        else:
+            return False
