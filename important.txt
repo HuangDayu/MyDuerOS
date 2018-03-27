@@ -1,0 +1,13 @@
+安装pip,setuptools
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
+安装Python2.7.14
+wget https://www.python.org/ftp/python/2.7.14/Python-2.7.14.tgz
+tar -zxvf Python-2.7.14.tgz
+cd Python-2.7.14/
+./configure
+make
+sudo make install
+安装dateutil
+wget https://pypi.python.org/packages/0c/57/19f3a65bcf6d5be57
+sudo pip install python_dateutil-2.7.2-py2.py3-none-any.whl
