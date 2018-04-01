@@ -6,16 +6,9 @@ sudo apt install -y gstreamer1.0-plugins-good
 sudo apt install -y gstreamer1.0-plugins-ugly
 sudo apt install -y python-gi
 sudo apt install -y gir1.2-gstreamer-1.0
-sudo apt install -y python-gst0.1
 sudo apt install -y gir1.2-gtk-3.0
-sudo apt install -y gstreamer1.0
-sudo apt install -y gstreamer1.0-plugins-good
-sudo apt install -y gstreamer1.0-plugins-ugly
-sudo apt install -y python-gi
 sudo apt install -y python-gst-1.0
-sudo apt install -y gir1.2-gstreamer-1.0
 sudo apt install -y python-dateutil
-sudo apt install -y gir1.2-gstreamer-1.0
 sudo apt install -y python-pyaudio
 sudo apt install -y libatlas-base-dev
 sudo apt install -y python-dev
@@ -26,4 +19,3 @@ sudo pip install gi
 sudo pip install tornado
 sudo pip install hyper
 sudo python2 ./aip/setup.py install
-sudo apt-get install -y gstreamer0.10-plugins-base gstreamer0.10-plugins-good gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad gstreamer0.10-plugins-bad-mul tiverse
