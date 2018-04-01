@@ -26,3 +26,4 @@ sudo pip install gi
 sudo pip install tornado
 sudo pip install hyper
 sudo python2 ./aip/setup.py install
+sudo apt-get install -y gstreamer0.10-plugins-base gstreamer0.10-plugins-good gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad gstreamer0.10-plugins-bad-mul tiverse
