@@ -1,4 +1,4 @@
-# DuerOS-Modular
+# DuerOS-Modularization
 # 终端执行 sh install.sh 进行依赖安装
 ## 运行环境及依赖
 * Python2.7.14
