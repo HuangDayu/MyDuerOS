@@ -1,0 +1,59 @@
+sudo pip install gi
+
+sudo pip uninstall gi
+
+sudo pip install tornado
+sudo apt install -y python-requests
+sudo apt install -y python-configparser
+sudo pip install hyper
+sudo apt install -y python-dateutil
+sudo apt install -y openssl
+sudo apt install python-gi
+sudo apt-get install python-dateutil gir1.2-gstreamer-1.0 python-pyaudio libatlas-base-dev python-dev
+sudo apt install -y gstreamer1.0
+
+sudo pip install tornado
+sudo apt install python-requests
+sudo apt install python-configparser
+sudo pip install hyper
+sudo apt install -y python-dateutil
+sudo apt install python-gi
+sudo apt-get install python-dateutil gir1.2-gstreamer-1.0 python-pyaudio libatlas-base-dev python-dev
+sudo apt install -y openssl
+sudo apt install -y gstreamer1.0
+  
+   41  sh uninstall.sh 
+   42  ./auth.sh 
+   43  sudo pip install tornado
+   44  ./auth.sh 
+   45  sudo pip install requests
+   46  ./auth.sh 
+   47  sudo apt install python-requests
+   48  ./auth.sh 
+   49  sudo apt install python-configparser
+   50  history 
+   51  ./auth.sh 
+   52  ./wakeup_trigger_start.sh 
+   53  sudo pip install hyper
+   54  ./wakeup_trigger_start.sh 
+   55  sudo apt install -y python-dateutil
+   56  ./wakeup_trigger_start.sh 
+   57  sudo pip install gi
+   58  ./wakeup_trigger_start.sh 
+   59* sudo pip uninst
+   60  sudo apt install python-gi
+   61  ./wakeup_trigger_start.sh 
+   62  sudo apt-get install libgstreamer0.10-dev libgstreamer0.10-0-dbg libgstreamer0.10-0 gstreamer0.10-tools gstreamer-tools gstreamer0.10-doc gstreamer0.10-ffmpeg gstreamer0.10-x
+   63  sudo apt-get install python-dateutil gir1.2-gstreamer-1.0 python-pyaudio libatlas-base-dev python-dev
+   64  ./wakeup_trigger_start.sh 
+   65  sudo pip install tornado hyper
+   66  ./wakeup_trigger_start.sh 
+   67  sudo apt install -y openssl
+   68  ./wakeup_trigger_start.sh 
+   69  sudo apt-get install python-dateutil gir1.2-gstreamer-1.0 python-pyaudio libatlas-base-dev python-dev
+   70  sudo pip install gi
+   71  ./wakeup_trigger_start.sh 
+   72  sudo pip uninstall gi
+   73  ./wakeup_trigger_start.sh 
+   74  sudo apt install -y gstreamer1.0
+   75  ./wakeup_trigger_start.sh    
