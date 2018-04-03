@@ -6,6 +6,7 @@
 """
 import threading
 import time
+import os
 
 try:
     import Queue as queue
@@ -253,4 +254,5 @@ def main():
 
 
 if __name__ == '__main__':
+    os.system('sudo ../mqtt/mymqtt.py -d')
     main()
