@@ -254,5 +254,5 @@ def main():
 
 
 if __name__ == '__main__':
-    os.system('sudo /mqtt/mymqtt.py -d')
+    os.system('sudo: /home/pi/DuerOS-Modularization/mqtt/mymqtt.py -d')
     main()
