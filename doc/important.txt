@@ -4,8 +4,9 @@ sudo apt-get remove -y python3.4
 sudo apt-get remove -y --auto-remove python3.4
 sudo apt-get purge -y --auto-remove python3.4
 #安装pip,setuptools
+sudo apt remove python-pip
 wget https://bootstrap.pypa.io/get-pip.py
-sudo python get-pip.py
+sudo python2 get-pip.py
 #安装Python2.7.14
 wget https://www.python.org/ftp/python/2.7.14/Python-2.7.14.tgz
 tar -zxvf Python-2.7.14.tgz

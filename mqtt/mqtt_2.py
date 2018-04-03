@@ -48,7 +48,7 @@ def handle(text,mic,profile,wxbot=None):
 	try:
 		mic.say("已经接收到指令", cache=True)
 		mqtt_contro(host,port,topic_s,topic_p,text,mic)
-	except Exception, e:
+	except Exception as e:
 		logger.error(e)
 		mic.say("抱歉出了问题", cache=True)
 		return
