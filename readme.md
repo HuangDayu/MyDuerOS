@@ -14,7 +14,7 @@
 ### 本项目为修改自定义唤醒词版本，默认喊“小白”可以唤醒，可在配置文件config.ini中修改唤醒词模型。
 ### 请修改为自己的DuerOS设备开放平台上创建的音箱产品的ID，需要进行远程桌面树莓派进行百度开发者账号授权。
 #### 安装远程桌面包 sudo apt-get install -y tightvncserver xrdp
-#### vim /home/pi/DuerOS-Modular/config.ini
+#### vim /home/pi/DuerOS-Modularization/config.ini
 #### CLIENT_ID = '你的CLIENT_ID'
 #### CLIENT_SECRET = '你的CLIENT_SECRET'
 ### 授权：sh auth.sh 或者 ./auth.sh
