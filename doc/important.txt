@@ -11,8 +11,8 @@ sudo python2 get-pip.py
 wget https://www.python.org/ftp/python/2.7.14/Python-2.7.14.tgz
 tar -zxvf Python-2.7.14.tgz
 cd Python-2.7.14/
-./configure
-make
+sudo ./configure
+sudo make
 sudo make install
 #安装dateutil
 wget https://pypi.python.org/packages/0c/57/19f3a65bcf6d5be57
