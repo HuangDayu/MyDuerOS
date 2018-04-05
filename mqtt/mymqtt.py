@@ -19,7 +19,7 @@ def on_connect(client, userdata, null,rc):
     print('MQTT message published.')
 
 def on_message(client, userdata, msg):
-    msg = str(msg.payload, 'ISO-8859-1')
+    msg = str(msg.payload)#, 'ISO-8859-1'
     print('MQTT message received: ' + msg)
     if msg == 'exit':
         sys.exit()
