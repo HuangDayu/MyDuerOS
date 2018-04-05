@@ -1,4 +1,4 @@
-echo 'Uninstall DuerOS-Modularization Python Dependency Library Now!'
+echo 'Remove And Uninstall DuerOS-Modularization Python Dependency Library Now!'
 sudo apt-get update
 sudo apt remove -y gstreamer1.0
 sudo apt remove -y gstreamer1.0-plugins-good
