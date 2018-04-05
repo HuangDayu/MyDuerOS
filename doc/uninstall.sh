@@ -1,5 +1,4 @@
-echo 'remove DuerOS-Modularization Python Dependency Library Now!'
-sudo chmod 777 wakeup_trigger_start.sh auth.sh enter_trigger_start.sh
+echo 'Uninstall DuerOS-Modularization Python Dependency Library Now!'
 sudo apt-get update
 sudo apt remove -y gstreamer1.0
 sudo apt remove -y gstreamer1.0-plugins-good
@@ -18,4 +17,3 @@ sudo apt remove -y mplayer
 sudo pip uninstall gi
 sudo pip uninstall tornado
 sudo pip uninstall hyper
-sudo python2 ./aip/setup.py install
