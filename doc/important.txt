@@ -24,7 +24,5 @@ cd gst-python-1.2.0
 sudo ./configure
 sudo make
 sudo make install
-
-mcpi==0.1.1
-lxkeymap==0.1
-RTIMULib==7.2.1
+#安装远程桌面包
+sudo apt-get install -y tightvncserver xrdp
