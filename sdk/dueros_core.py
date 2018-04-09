@@ -169,7 +169,7 @@ class DuerOS(object):
                 logger.exception(e)
                 continue
             except hyper.http20.exceptions.StreamResetError as e:
-                logger.exception(e)
+                ##logger.exception(e)
                 continue
             except ValueError as e:
                 logging.exception(e)
