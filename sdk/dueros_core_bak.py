@@ -283,9 +283,9 @@ class DuerOS(object):
             end_part = '\r\n--{}--'.format(eventchannel_boundary)
             conn.send(end_part.encode('utf-8'), final=True, stream_id=stream_id)
 
-            ##logger.info("wait for response")
+            logger.info("wait for response")
             resp = conn.get_response(stream_id)
-            ##logger.info("status code: %s", resp.status)
+            logger.info("status code: %s", resp.status)
 
             if resp.status == 200:
                 self.__read_response(resp)
@@ -360,7 +360,7 @@ class DuerOS(object):
                 if in_payload:
                     in_payload = False
                     if content_type == "application/json":
-                        ##logger.info("Finished downloading JSON")
+                        logger.info("Finished downloading JSON")
                         utf8_payload = payload.getvalue().decode('utf-8')
                         if utf8_payload:
                             json_payload = json.loads(utf8_payload)
@@ -368,7 +368,7 @@ class DuerOS(object):
                             if 'directive' in json_payload:
                                 directives.append(json_payload['directive'])
                     else:
-                        ##logger.info("Finished downloading {} which is {}".format(content_type, content_id))
+                        logger.info("Finished downloading {} which is {}".format(content_type, content_id))
                         payload.seek(0)
                         # TODO, start to stream this to speakers as soon as we start getting bytes
                         # strip < and >
@@ -376,7 +376,7 @@ class DuerOS(object):
                         with open(os.path.join(tempfile.gettempdir(), '{}.mp3'.format(content_id)), 'wb') as f:
                             f.write(payload.read())
 
-                        ##logger.info('write audio to {}.mp3'.format(content_id))
+                        logger.info('write audio to {}.mp3'.format(content_id))
 
                 continue
             elif on_boundary:
@@ -403,8 +403,8 @@ class DuerOS(object):
 
             if in_payload:
                 # add back the bytes that our iter_lines consumed
-                ##logger.info("Found %s bytes of %s %s, first_payload_block=%s",
-                ##            len(line), content_id, content_type, first_payload_block)
+                logger.info("Found %s bytes of %s %s, first_payload_block=%s",
+                            len(line), content_id, content_type, first_payload_block)
                 if first_payload_block:
                     first_payload_block = False
                 else:
@@ -415,8 +415,8 @@ class DuerOS(object):
 
         if buffer is not None:
             if in_payload:
-                ##logger.info(
-                ##    "Didn't see an entire directive, buffering to put at top of next frame")
+                logger.info(
+                    "Didn't see an entire directive, buffering to put at top of next frame")
                 buffer.write(payload.read())
             else:
                 buffer.write(boundary)
