@@ -1,5 +1,6 @@
 echo 'Install DuerOS-Modularization Python Dependency Library Now!'
 sudo chmod 777 wakeup_trigger_start.sh auth.sh enter_trigger_start.sh
+sudo apt update --fix-missing
 sudo pip uninstall gi
 sudo apt install -y python-gi
 sudo pip install tornado
