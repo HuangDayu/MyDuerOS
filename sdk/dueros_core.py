@@ -110,7 +110,7 @@ class DuerOS(object):
 
         self.__config['host_url'] = 'dueros-h2.baidu.com'
 
-        self.__config['api'] = 'dcs/v2'
+        self.__config['api'] = 'dcs/v1'
         self.__config['refresh_url'] = 'https://openapi.baidu.com/oauth/2.0/token'
 
         self.last_activity = datetime.datetime.utcnow()
