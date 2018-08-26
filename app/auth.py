@@ -4,11 +4,11 @@ OAuth2.0认证
 '''
 import sdk.auth as auth
 
+import cnf.config as cnfg
+
 # 开发者注册信息
-CLIENT_ID = 'CGVMkG8VwgIlMbqxtsVy0ubeXA58K1C3'
-CLIENT_SECRET = 'Binb4KBTM0RDGvcxBCibOoAWqmu2ME1C'
-
-
+CLIENT_ID = cnfg.getConfigValue("user","client_id")
+CLIENT_SECRET = cnfg.getConfigValue("user","client_secret")
 
 
 def main():
