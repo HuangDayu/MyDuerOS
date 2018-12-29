@@ -1,21 +1,55 @@
 # DuerOS-Modularization
-# 终端执行 sh install.sh 进行依赖安装
-## 运行环境及依赖
-* Python2.7.14
-* gstreamer1.0
-* gstreamer1.0-plugins-good
-* gstreamer1.0-plugins-ugly
-* python-gi
-* python-gst
-* gir1.2-gstreamer-1.0
-### 本项目代码来源链接：https://github.com/MyDuerOS/DuerOS-Python-Client
-### 作者是百度大神刘才权，其简书主页：https://www.jianshu.com/u/bf03aa158e75 博客主页 https://caiquanliu.github.io/
-### 本人详细教程链接： https://developer.dueros.baidu.com/didp/forum/topic/show?topicId=245089
-### 本项目为修改自定义唤醒词版本，默认喊“小白”可以唤醒，可在配置文件config.ini中修改唤醒词模型。
-### 请修改为自己的DuerOS设备开放平台上创建的音箱产品的ID，需要进行远程桌面树莓派进行百度开发者账号授权。
-#### vim /home/pi/DuerOS-Modularization/config.ini
-#### CLIENT_ID = '你的CLIENT_ID'
-#### CLIENT_SECRET = '你的CLIENT_SECRET'
-### 授权：sh auth.sh 或者 ./auth.sh
-### 语音唤醒：sh wakeup_trigger_start.sh 或者 ./wakeup_trigger_start.sh
-### 回车唤醒：sh enter_trigger_start.sh 或者 ./enter_trigger_start.sh
+
+# 项目亮点
+
+- 主要选项实现配置化，包括唤醒词路径，配置等
+- 加入百度语音合成，可以自定义回复
+- 通过DCS协议返回的json实现语义理解，相当于只使用语音识别和百度语音理解
+- 更多请自行发掘
+
+# 项目来源
+
+[DuerOS-Python-Client](https://github.com/MyDuerOS/DuerOS-Python-Client)  
+
+# 原项目作者
+
+百度刘才权  
+[Github主页](https://github.com/CaiquanLiu)  
+[简书主页](https://www.jianshu.com/u/bf03aa158e75)  
+[博客主页](https://caiquanliu.github.io/)  
+
+# 项目教程
+
+[本人详细的DuerOS教程](https://developer.dueros.baidu.com/didp/forum/topic/show?topicId=245089)  
+
+# 唤醒词
+
+默认是**小白**   
+[唤醒词训练地址](https://snowboy.kitt.ai/hotword/351)  
+
+# 修改步骤
+
+- 请修改为自己的DuerOS设备开放平台上创建的音箱产品的ID，需要百度开发者账号授权。
+- 修改根目录下配置文件`config.ini`    
+```shell
+vim config.ini
+```
+- app_id = "百度语音合成产品ID"
+- client_id = '你的CLIENT_ID'
+- client_secret = '你的CLIENT_SECRET'
+- snowboyPmdl = "唤醒词路径"
+- 需要赋予最高权限才可执行 
+```shell
+chmod 777 wakeup_trigger_start.sh auth.sh enter_trigger_start.sh 
+```
+- ./auth.sh
+- ./wakeup_trigger_start.sh
+- ./enter_trigger_start.sh
+- 或者在Shell脚本前添加sh
+- sh auth.sh
+- sh wakeup_trigger_start.sh
+- sh enter_trigger_start.sh
+
+# 说明
+
+- 时间有限，项目基本停止维护
