@@ -1,4 +1,4 @@
-# DuerOS-Modularization
+# MyDuerOS
 
 # 项目亮点
 
